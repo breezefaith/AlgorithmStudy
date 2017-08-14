@@ -1,2 +1,2 @@
-# AlgrithmStudy
-Algrithm Study Project
+# AlgorithmStudy
+Algorithm Study Project
