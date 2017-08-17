@@ -13,8 +13,8 @@ public class MaxContiniousSubseq {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		int []array= {1,-1,2,3,-2,3};
-		System.out.println(findGreatestSumOfSubArray(array));
+		int []array= {-2,1,-3,4,-1,2,1,-5,4};
+		System.out.println(maxSubArray(array));
 	}
 	
 	public static int findGreatestSumOfSubArray(int[] array) {
@@ -51,7 +51,19 @@ public class MaxContiniousSubseq {
 		}
         return currentMax.value;
     }
-	
+	public static int maxSubArray(int[] array) {
+        int max=array[0];
+        int currentMaxSum=array[0];
+        for(int i=0;i<array.length;i++){
+            if(currentMaxSum+array[i]<array[i]){
+                currentMaxSum=array[i];
+            }else{
+                currentMaxSum+=array[i];
+            }
+            max=max>currentMaxSum?max:currentMaxSum;
+        }
+        return max;
+    }
 }
 class CurrentMax{
 	int start;
